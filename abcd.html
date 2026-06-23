@@ -1,0 +1,50 @@
+<section class="Lmn-mx-auto Lmn-d-flex Lmn-flex-column Lmn-gap-16px Lmn-h-[calc(100vh-48px)] Lmn-max-w-5xl">
+  <div class="Lmn-card Lmn-d-flex Lmn-flex-column Lmn-h-full Lmn-min-h-0 Lmn-overflow-hidden Lmn-mt-8px Lmn-mb-8px">
+    
+    <header class="Lmn-position-sticky Lmn-top-0 Lmn-z-20 Lmn-bg-white Lmn-border-bottom Lmn-px-20px Lmn-py-16px">
+      <div class="Lmn-d-flex Lmn-align-items-center Lmn-justify-content-between Lmn-gap-16px">
+        <div>
+          <p class="Lmn-font-size-12px Lmn-font-weight-semibold Lmn-text-uppercase Lmn-letter-spacing-wide Lmn-color-text-secondary">
+            Tasks
+          </p>
+          <h2 class="Lmn-font-size-18px Lmn-font-weight-semibold Lmn-color-text-primary">
+            Today&apos;s Cards
+          </h2>
+        </div>
+
+        <button type="button" class="Lmn-button Lmn-button-primary">
+          Add Card
+        </button>
+      </div>
+    </header>
+
+    <div class="Lmn-flex-1 Lmn-min-h-0 Lmn-overflow-y-auto Lmn-p-16px">
+      <div class="Lmn-grid Lmn-grid-cols-1 Lmn-gap-16px Lmn-min-h-full md:Lmn-grid-cols-2">
+        @for (card of cards; track card.title) {
+          <article class="Lmn-card Lmn-d-flex Lmn-flex-column Lmn-min-h-192px Lmn-p-16px">
+            <div class="Lmn-d-flex Lmn-align-items-start Lmn-justify-content-between Lmn-gap-12px">
+              <h3 class="Lmn-font-size-16px Lmn-font-weight-semibold Lmn-color-text-primary">
+                {{ card.title }}
+              </h3>
+
+              <span class="Lmn-badge Lmn-badge-neutral">
+                {{ card.status }}
+              </span>
+            </div>
+
+            <p class="Lmn-mt-12px Lmn-font-size-14px Lmn-line-height-24px Lmn-color-text-secondary">
+              {{ card.body }}
+            </p>
+
+            <div class="Lmn-mt-auto Lmn-pt-20px">
+              <button type="button" class="Lmn-button Lmn-button-secondary">
+                View Details
+              </button>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>
